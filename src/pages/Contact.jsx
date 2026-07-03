@@ -18,6 +18,7 @@ export default function Contact() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [scrollY, setScrollY] = useState(0);
 
@@ -34,7 +35,7 @@ export default function Contact() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMsg('');
 
@@ -50,24 +51,43 @@ export default function Contact() {
       return;
     }
 
-    const messageText = `*New Quote Request - Pandyan Industrial*
-----------------------------------------
-*Name:* ${formData.name}
-*Company:* ${formData.company}
-*Phone:* ${formData.phone}
-*Email:* ${formData.email}
-*Requirement:* ${formData.requirement}
-*Message:* ${formData.message}`;
+    setIsSubmitting(true);
 
-    const encodedText = encodeURIComponent(messageText);
-    const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodedText}`;
-    window.open(whatsappUrl, '_blank');
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: "",
+          name: formData.name,
+          company: formData.company,
+          phone: formData.phone,
+          email: formData.email,
+          requirement: formData.requirement,
+          message: formData.message,
+          subject: `New Quote Request from ${formData.name} (${formData.company})`
+        })
+      });
 
-    setIsSubmitted(true);
-    setFormData({
-      name: '', company: '', phone: '', email: '',
-      requirement: 'Vertical Turning (VTL)', message: ''
-    });
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({
+          name: '', company: '', phone: '', email: '',
+          requirement: 'Vertical Turning (VTL)', message: ''
+        });
+      } else {
+        setErrorMsg(result.message || "Failed to submit request. Please try again.");
+      }
+    } catch (error) {
+      setErrorMsg("An error occurred. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -327,10 +347,15 @@ export default function Contact() {
                     <MagneticButton>
                       <button
                         type="submit"
-                        className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-extrabold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group cursor-pointer"
+                        disabled={isSubmitting}
+                        className={`w-full text-white font-extrabold py-4 px-8 rounded-xl shadow-md transition-all duration-300 flex items-center justify-center space-x-2 group ${
+                          isSubmitting
+                            ? 'bg-slate-400 cursor-not-allowed shadow-none'
+                            : 'bg-brand-blue hover:bg-brand-blue-dark hover:shadow-lg cursor-pointer'
+                        }`}
                       >
-                        <span>Submit Request</span>
-                        <Send className="h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        <span>{isSubmitting ? 'Submitting...' : 'Submit Request'}</span>
+                        {!isSubmitting && <Send className="h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
                       </button>
                     </MagneticButton>
                   </div>

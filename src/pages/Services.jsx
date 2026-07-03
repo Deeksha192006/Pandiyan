@@ -281,14 +281,16 @@ export default function Services() {
                     </div>
 
                     {/* CTA link */}
-                    <div className="mt-4 pt-4 border-t border-slate-100 relative z-10">
-                      <Link
-                        to="/contact"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-blue uppercase tracking-wider group/link hover:text-brand-blue-dark transition-colors"
+                    <div className="mt-5 pt-4 border-t border-slate-100">
+                      <a
+                        href="https://wa.me/919840838968"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-blue uppercase tracking-wider group/link"
                       >
                         <span>Get a Quote</span>
-                        <ArrowRight className="h-3.5 w-3.5 transform group-hover/link:translate-x-1.5 transition-transform duration-300" />
-                      </Link>
+                        <ArrowRight className="h-3.5 w-3.5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -362,15 +364,17 @@ export default function Services() {
                 <ScrollReveal animation="fade-up" delay={3600} duration={0.8}>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center pt-3">
                     <MagneticButton>
-                      <Link
-                        to="/contact"
+                      <a
+                        href="https://wa.me/919840838968"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="relative inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-black px-9 py-4 rounded-xl shadow-lg shadow-brand-blue/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-brand-blue/35 hover:shadow-xl overflow-hidden group/btn"
                       >
                         {/* Shine sweep */}
                         <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-[150%] group-hover/btn:translate-x-[250%] transition-transform duration-1000 ease-out" />
                         <span className="relative z-10">Get Custom Quote</span>
                         <ArrowRight className="h-4 w-4 relative z-10 transform group-hover/btn:translate-x-1 transition-transform" />
-                      </Link>
+                      </a>
                     </MagneticButton>
                     <MagneticButton>
                       <Link

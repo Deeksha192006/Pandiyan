@@ -320,14 +320,16 @@ export default function Clients() {
                 <ScrollReveal animation="fade-up" delay={3400} duration={0.8}>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center pt-3">
                     <MagneticButton>
-                      <Link
-                        to="/contact"
+                      <a
+                        href="https://wa.me/919840838968"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="relative inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-black px-10 py-4 rounded-xl shadow-lg shadow-brand-blue/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-brand-blue/35 hover:shadow-xl overflow-hidden group/btn"
                       >
                         <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-[150%] group-hover/btn:translate-x-[250%] transition-transform duration-1000 ease-out" />
                         <span className="relative z-10">Get a Quote</span>
                         <ArrowRight className="h-4 w-4 relative z-10 transform group-hover/btn:translate-x-1 transition-transform" />
-                      </Link>
+                      </a>
                     </MagneticButton>
                     <MagneticButton>
                       <Link

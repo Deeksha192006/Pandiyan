@@ -82,12 +82,14 @@ export default function Navbar() {
 
           <div className="hidden lg:block">
             <MagneticButton>
-              <Link
-                to="/contact"
+              <a
+                href="https://wa.me/919840838968"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-all duration-300 hover:shadow-lg hover:shadow-brand-blue/30 active:scale-95 inline-block"
               >
                 Get a Quote
-              </Link>
+              </a>
             </MagneticButton>
           </div>
 
@@ -134,13 +136,15 @@ export default function Navbar() {
             </NavLink>
           ))}
           <div className="pt-2 px-4">
-            <Link
-              to="/contact"
+            <a
+              href="https://wa.me/919840838968"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
               className="w-full text-center bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold py-3 px-4 rounded-lg text-sm transition-all duration-200 block shadow-lg shadow-brand-blue/20"
             >
               Get a Quote
-            </Link>
+            </a>
           </div>
         </div>
       </div>

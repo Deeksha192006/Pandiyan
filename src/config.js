@@ -1,7 +1,7 @@
 // Central configurations for Pandyan Industrial Equipments Pvt. Ltd.
 export const CONFIG = {
-  whatsappNumber: '919840012345', // WhatsApp Business number (with country code, without +)
-  contactEmail: 'pandyanindustrial@yahoo.com',
+  whatsappNumber: '919840838968', // WhatsApp Business number (with country code, without +)
+  contactEmail: 'Pandyanindustrial@gmail.com',
   contactPhone: '+91 44 2225 3303',
   contactPhoneRaw: '+914422253303',
   address: {

@@ -259,13 +259,15 @@ export default function Home() {
           <ScrollReveal animation="fade-up" delay={5000} duration={0.8}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
               <MagneticButton>
-                <Link
-                  to="/contact"
+                <a
+                  href="https://wa.me/919840838968"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold text-center px-8 py-4 rounded-xl shadow-lg shadow-brand-blue/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center space-x-2 hover:ring-2 hover:ring-brand-blue/40 hover:ring-offset-2 hover:ring-offset-slate-950"
                 >
                   <span>Get a Quote</span>
                   <ArrowRight className="h-5 w-5" />
-                </Link>
+                </a>
               </MagneticButton>
               <MagneticButton>
                 <Link
@@ -934,8 +936,10 @@ export default function Home() {
 
                 <div className="flex justify-center pt-4">
                   <MagneticButton>
-                    <Link
-                      to="/contact"
+                    <a
+                      href="https://wa.me/919840838968"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="relative inline-flex items-center gap-3 bg-brand-blue hover:bg-brand-blue-dark text-white font-black px-10 py-4 rounded-xl shadow-xl transition-all duration-300 hover:shadow-brand-blue/35 hover:-translate-y-0.5 group/btn overflow-hidden"
                     >
                       {/* Sliding glow shine */}
@@ -943,7 +947,7 @@ export default function Home() {
                       
                       <span className="relative z-10">Get a Quote</span>
                       <ArrowRight className="h-4 w-4 relative z-10 transform group-hover/btn:translate-x-1 transition-transform" />
-                    </Link>
+                    </a>
                   </MagneticButton>
                 </div>
               </div>
