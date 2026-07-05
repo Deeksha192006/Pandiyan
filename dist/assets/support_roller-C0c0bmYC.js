@@ -1,0 +1,1 @@
+var e=`/assets/support_roller-CBWiWKw-.webp`;export{e as t};

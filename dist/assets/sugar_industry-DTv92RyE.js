@@ -1,0 +1,1 @@
+var e=`/assets/sugar_industry-KlZJREO8.jpg`;export{e as t};

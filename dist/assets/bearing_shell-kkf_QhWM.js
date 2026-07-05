@@ -1,0 +1,1 @@
+var e=`/assets/bearing_shell-CPa2Iblb.webp`;export{e as t};

@@ -1,0 +1,1 @@
+var e=`/assets/valve_industry-UjkqFca4.jpg`;export{e as t};

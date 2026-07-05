@@ -1,0 +1,1 @@
+var e=`/assets/shaft_rotor-C7YEg6O2.webp`,t=`/assets/htd_gears-B3T09wH1.webp`;export{e as n,t};

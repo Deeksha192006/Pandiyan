@@ -1,0 +1,1 @@
+var e=`/assets/valve_machining-CZbhW89u.webp`;export{e as t};

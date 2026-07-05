@@ -1,0 +1,1 @@
+var e=`/assets/process_industry-CDCqsmla.jpg`;export{e as t};
